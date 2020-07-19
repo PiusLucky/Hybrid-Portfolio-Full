@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63" height="140" viewBox="0 0 63 140">
+  <title>MongoDB icon</title>
+  <defs>
+    <linearGradient id="a" x1="0%" y1="52.742%" y2="52.742%">
+      <stop offset="0%" stop-color="#929669" />
+      <stop offset="23.077%" stop-color="#929669" />
+      <stop offset="100%" stop-color="#fdfcf1" />
+    </linearGradient>
+    <linearGradient id="b" x1="-16.607%" x2="78.15%" y1="99.299%" y2="2.536%">
+      <stop offset="0%" stop-color="#45aa3a" />
+      <stop offset="100%" stop-color="#3d9439" />
+    </linearGradient>
+    <linearGradient id="c" x1="-9.624%" x2="152.344%" y1="43.904%" y2="53.689%">
+      <stop offset="0%" stop-color="#41a83b" />
+      <stop offset="100%" stop-color="#5ebc44" />
+    </linearGradient>
+  </defs>
+  <path fill="url(#a)" d="M34.493 139.629l-3.745-1.24s.478-18.955-6.358-20.283c-4.508-5.223.694-223.111 17.07-.746 0 0-5.605 2.814-6.666 7.594-1.061 4.782-.3 14.675-.3 14.675z" />
+  <path fill="url(#b)" d="M36.512 121.324c-7.216-3.319-4.353-30.832-4.353-30.832L30.775.384s2.065 5.091 4.116 7.963c1.863 4.06 19.198 14.69 26.54 47.03 7.624 44.514-24.919 65.947-24.919 65.947z" />
+  <path fill="url(#c)" d="M28.843 122.522S-1.684 101.697.073 64.954C1.83 28.21 23.39 10.144 27.589 6.866c2.715-2.893 2.828-4.008 3.038-6.863 1.902 4.087 1.586 61.052 1.787 67.71.783 25.92-1.435 49.916-3.571 54.81z" />
+</svg>

@@ -1,0 +1,392 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'backend_dependencies/bootstrap.min.css' %}">
+    <style type="text/css">
+        .spacer{
+            margin-top:25px;
+        }
+    </style>
+    <title>Backend - HybridPortfolio</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background:#23eae6;color:#000;">
+        <a class="navbar-brand" href="#" style="font-weight: bold;color: #000;">Backend - HybridPortfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" style="
+                    padding: .1rem 2rem;
+                    background: grey;  
+                    ">
+                    <a class="nav-link" href="/">Back to Site <span class="sr-only">(current)</span></a>
+                </li>
+                    <li class="nav-item active" style="
+                    padding: .1rem 2rem;
+                    margin-left: 1rem;
+                    background: grey
+                    ">
+                    <a class="nav-link" href="/backend/">Refresh</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row spacer"></div>
+        <div class="row offset-2">
+            <div class="col-12">
+                <style type="text/css">
+                    input{
+                        background:#23eae6;
+                        width: 60%;
+                        padding: .5rem 4rem;
+                        color: #fff;
+                        border-style: none;
+                    }
+                    select, textarea{
+                        background:whitesmoke;
+                        width: 60%;
+                        padding: .5rem 4rem;
+                        color: #000;
+                        border-style: none;
+                    }
+                </style>
+               
+            
+                
+                <!-- Stack -->
+                <h1>STACK</h1>
+                <form class="form-horizontal" method="post" action="/post/stack/" enctype="multipart/form-data">
+                    {% csrf_token %}
+                {{ formset.management_form }}
+                {% for form in formset %}
+                <div class="row stack_form spacer">
+                    <table class="table table-bordered"> 
+                        <thead> 
+                            <tr> 
+                                <th>#</th> 
+                                <th>Stack</th> 
+                            </tr>
+                        </thead> 
+                        <tbody> 
+                            <tr> 
+                                <th scope="row">{{form.position.label}}</th> 
+                                <td>{{form.position}} &nbsp;{% if form.position.errors %} {{form.position.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.icon.label}}</th> 
+                                <td>{{form.icon}} &nbsp;{% if form.icon.errors %} {{form.icon.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.tech.label}}</th> 
+                                <td>{{form.tech}}&nbsp;{% if form.tech.errors %} {{form.tech.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.about_tech.label}}</th> 
+                                <td>{{form.about_tech}}&nbsp;{% if form.about_tech.errors %} {{form.about_tech.errors}} {% endif %}</td> 
+                            </tr> 
+                        </tbody> 
+                    </table>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn btn-block btn-success  add-stack-row">Add Stack + </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="row spacer" style="margin-bottom: 5%;">
+                <div class="col-6">
+                <button type="submit" class="btn btn-block" style="height:7.6vh;background: #ff7e5f;  
+                background: -webkit-linear-gradient(to right, #feb47b, #ff7e5f);  
+                background: linear-gradient(to right, #feb47b, #ff7e5f); 
+                " value="get_stack_value" name="get_stack_name">Create Stack</button>
+                </div>
+                <div class="col-6">
+                    {% if formset.errors  and target == "Stack" %}
+                    <div class="alert alert-success alert-dismissible" role="alert" id="tech_success">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <strong>congrats!</strong> {{info}} <span style="color: #fff;font-weight: bold;">{{target}}.</span>
+                    </div>
+                    {% elif error == "Invalid stack form, Try again!" %}
+                    <div class="alert alert-warning alert-dismissible" role="alert" id="tech_failure">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <strong>warning!</strong> {{error}} 
+                    </div>
+                    {% endif %}
+                </div>
+                </div>
+                </form>
+                <!-- // stack -->
+                
+                 <h1>PORTFOLIO</h1>
+                <!-- portfolio skills -->
+                <form class="form-horizontal" method="post" enctype="multipart/form-data" action="/post/portf/">
+                    {% csrf_token %}
+                {{ portf_formset.management_form }}
+                {% for form in portf_formset %}
+                <div class="row portf_form spacer">
+                    <table class="table table-bordered"> 
+                        <thead> 
+                            <tr> 
+                                <th>#</th> 
+                                <th> Portfolio Items</th> 
+                            </tr>
+                        </thead> 
+                        <tbody>
+                            <tr> 
+                                <th scope="row">{{form.position.label}}</th> 
+                                <td>{{form.position}} &nbsp;{% if form.position.errors %} {{form.position.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.description_header.label}}</th> 
+                                <td>{{form.description_header}} &nbsp;{% if form.description_header.errors %} {{form.description_header.errors}} {% endif %}</td> 
+                            </tr>
+                            <tr> 
+                                <th scope="row">{{form.description_body.label}}</th> 
+                                <td>{{form.description_body}} &nbsp;{% if form.description_body.errors %} {{form.description_body.errors}} {% endif %}</td> 
+
+                            </tr> 
+                            <tr> 
+                                <th scope="row"><b style="color: red">#NOTE</b></th>
+                                <td><b style="color: red">Break description_body into paragraphs</b></td>
+                            </tr>
+
+                            <tr> 
+                                <th scope="row">{{form.image.label}}</th> 
+                                <td>{{form.image}}&nbsp;{% if form.image.errors %} {{form.image.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.github.label}}</th> 
+                                <td>{{form.github}}&nbsp;{% if form.github.errors %} {{form.github.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.link.label}}</th> 
+                                <td>{{form.link}}&nbsp;{% if form.link.errors %} {{form.link.errors}} {% endif %}</td> 
+                            </tr> 
+                        </tbody> 
+                    </table>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn btn-block btn-success  add-portf-row">Add Portfolio Item + </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="row spacer" style="margin-bottom: 5%;">
+                <div class="col-6">
+                <button type="submit" class="btn btn-block" style="height:7.6vh;background: #ff7e5f;  
+                background: -webkit-linear-gradient(to right, #feb47b, #ff7e5f);  
+                background: linear-gradient(to right, #feb47b, #ff7e5f); 
+                " value="get_portf_value" name="get_portf_name">Create Portfolio Item</button>
+                </div>
+                <div class="6">
+                    {% if portf_formset.errors  and target == "Portfolio Item" %}
+                    <div class="alert alert-success alert-dismissible" role="alert" id="portf_success">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <strong>congrats!</strong> {{info}} <span style="color: #fff;font-weight: bold;">{{target}}.</span>
+                    </div>
+                    {% elif  error == "Invalid Portfolio form, Try again!" %}
+                    <div class="alert alert-warning alert-dismissible" role="alert" id="portf_failure">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <strong>warning!</strong> {{error}} 
+                    </div>
+                    {% endif %}
+                </div>
+                </div>
+                </form>
+                <!-- // portfolio skills -->
+                
+                 <h1>ARCHIVE</h1>
+                <!-- archive -->
+                <form class="form-horizontal" method="post" enctype="multipart/form-data" action="/post/arch/">
+                    {% csrf_token %}
+                {{ arch_formset.management_form }}
+                {% for form in arch_formset %}
+                <div class="row arch_form spacer">
+                    <table class="table table-bordered"> 
+                        <thead> 
+                            <tr> 
+                                <th>#</th> 
+                                <th> Archive Items</th> 
+                            </tr>
+                        </thead> 
+                        <tbody>
+                            <tr> 
+                                <th scope="row">{{form.position.label}}</th> 
+                                <td>{{form.position}} &nbsp;{% if form.position.errors %} {{form.position.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.github.label}}</th> 
+                                <td>{{form.github}} &nbsp;{% if form.github.errors %} {{form.github.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.external_link.label}}</th> 
+                                <td>{{form.external_link}} &nbsp;{% if form.external_link.errors %} {{form.external_link.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.title.label}}</th> 
+                                <td>{{form.title}}&nbsp;{% if form.title.errors %} {{form.title.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.description.label}}</th> 
+                                <td>{{form.description}}&nbsp;{% if form.description.errors %} {{form.description.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row">{{form.backend_tech.label}}</th> 
+                                <td>{{form.backend_tech}}&nbsp;{% if form.backend_tech.errors %} {{form.backend_tech.errors}} {% endif %}</td> 
+                            </tr> 
+                            <tr> 
+                                <th scope="row"><b style="color: red">#NOTE</b></th>
+                                <td><b style="color: red">Separate backend_tech with space</b></td>
+                            </tr>
+                        </tbody> 
+                    </table>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn btn-block btn-success  add-arch-row">Add Archive Item + </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="row spacer" style="margin-bottom: 20%;">
+                <div class="col-6">
+                <button type="submit" class="btn btn-block" style="height: 7.6vh;background: #ff7e5f;  
+                background: -webkit-linear-gradient(to right, #feb47b, #ff7e5f);  
+                background: linear-gradient(to right, #feb47b, #ff7e5f); 
+                " value="get_archive_value" name="get_archive_name">Create Archive Item</button>
+                </div>
+                <div class="col-6">
+                    {% if arch_formset.errors  and target == "Archive Item" %}
+                    <div class="alert alert-success alert-dismissible" role="alert" id="arch_success">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <strong>congrats!</strong> {{info}} <span style="color: #fff;font-weight: bold;">{{target}}.</span>
+                    </div>
+                    {% elif  error == "Invalid Archive form, Try again!" %}
+                    <div class="alert alert-warning alert-dismissible" role="alert" id="arch_failure">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <strong>warning!</strong> {{error}} 
+                    </div>
+                    {% endif %}
+                </div>
+                </div>
+                </form>
+                <!-- // archive-->
+            
+                <script src="{% static 'backend_dependencies/jquery.min.js' %}"></script>
+                <script type="text/javascript">
+                  function updateElementIndex(el, prefix, ndx) {
+                      var id_regex = new RegExp('(' + prefix + '-\\d+)');
+                      var replacement = prefix + '-' + ndx;
+                      if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
+                      if (el.id) el.id = el.id.replace(id_regex, replacement);
+                      if (el.name) el.name = el.name.replace(id_regex, replacement);
+                  }
+                  //clone more for all forms
+                  function cloneMore(selector, prefix, not_last, 
+                                      add_type_class, add_type, remove_type, item_type) {
+                      var newElement = $(selector).clone(true);
+                      var total = $('#id_' + prefix + '-TOTAL_FORMS').val();
+                      newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function() {
+                          var name = $(this).attr('name')
+                          if(name) {
+                              name = name.replace('-' + (total-1) + '-', '-' + total + '-');
+                              var id = 'id_' + name;
+                              $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+                          }
+                      });
+                      newElement.find('label').each(function() {
+                          var forValue = $(this).attr('for');
+                          if (forValue) {
+                            forValue = forValue.replace('-' + (total-1) + '-', '-' + total + '-');
+                            $(this).attr({'for': forValue});
+                          }
+                      });
+                      total++;
+                      $('#id_' + prefix + '-TOTAL_FORMS').val(total);
+                      $(selector).after(newElement);
+
+                      var conditionRow = $(not_last);
+                      conditionRow.find(add_type_class)
+                      .removeClass('btn-success').addClass('btn-danger')
+                      .removeClass(add_type).addClass(remove_type)
+                      .html('remove' + '\xa0' + item_type + '\xa0' + '-');
+                      return false;
+                  }
+                  function deleteClone(prefix, btn, form_type) {
+                      var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
+                      if (total > 1){
+                          btn.closest(form_type).remove();
+                          var forms = $(form_type);
+                          $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+                          for (var i=0, formCount=forms.length; i<formCount; i++) {
+                              $(forms.get(i)).find(':input').each(function() {
+                                  updateElementIndex(this, prefix, i);
+                              });
+                          }
+                      }
+                      return false;
+                  }
+                  // stack add
+                  $(document).on('click', '.add-stack-row', function(e){
+                      e.preventDefault();
+                      cloneMore('.stack_form:last', 't_formset', '.stack_form:not(:last)',
+                                '.add-stack-row', 'add-stack-row', 'remove-stack-row', 'stack item');
+
+                      return false;
+                  });
+                  // stack remove
+                  $(document).on('click', '.remove-stack-row', function(e){
+                      e.preventDefault();
+                      deleteClone('t_formset', $(this), '.stack_form');
+                      return false;
+                  });
+                  
+                  // portfolio add
+                   $(document).on('click', '.add-portf-row', function(e){
+                      e.preventDefault();
+                      cloneMore('.portf_form:last', 'portf_formset', '.portf_form:not(:last)',
+                                '.add-portf-row', 'add-portf-row', 'remove-portf-row', 'portfolio item');
+                      return false;
+                  });
+                   // portfolio remove
+                   $(document).on('click', '.remove-portf-row', function(e){
+                       e.preventDefault();
+                       deleteClone('portf_formset', $(this), '.portf_form');
+                       return false;
+                   });
+        
+                    // archive add
+                     $(document).on('click', '.add-arch-row', function(e){
+                        e.preventDefault();
+                        cloneMore('.arch_form:last', 'arch_formset', '.arch_form:not(:last)',
+                                  '.add-arch-row', 'add-arch-row', 'remove-arch-row', 'archive item');
+                        return false;
+                    });
+                     // archive remove
+                     $(document).on('click', '.remove-arch-row', function(e){
+                         e.preventDefault();
+                         deleteClone('arch_formset', $(this), '.arch_form');
+                         return false;
+                     });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'backend_dependencies/popper.min.js' %}"></script>
+    <script src="{% static 'backend_dependencies/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>

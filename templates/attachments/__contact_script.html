@@ -1,0 +1,45 @@
+<script type="text/javascript">  
+$(document).ready(function() {
+// form ajax
+$("#contact_form").submit(function (e) {
+    e.preventDefault();
+    $(".ajax_loader").addClass("img_added")
+    var serialized_contact_form = $(this).serialize();
+    $.ajax({
+        type: "POST",
+        url: "{% url 'main:post_contact' %}",
+        data: serialized_contact_form,
+        success: function (response) {
+          $(".ajax_loader").removeClass("img_added")
+          const duration = 5 * 1000; // = 5 seconds                  
+          $(".s1").addClass("force-show").removeClass("f1")
+          $('.s1 #innerdiv')
+            .stop()
+            .css({ width: 100 })
+            .animate({ width: "0%" }, duration, "linear", function() { 
+            $(".s1").removeClass("force-show")
+          });         
+          $(".close-me-quick").on("click", function(){
+            $(".s1").removeClass("force-show")
+          })
+        },
+        error: function(error){
+          $(".ajax_loader").removeClass("img_added")
+          var duration = 5 * 1000; // = 5 seconds 
+          $(".ajax_loader").removeClass("img_added")
+          $(".f1").addClass("force-show").removeClass("s1")
+          $('.f1 #innerdiv')
+            .stop()
+            .css({ width: 100 })
+            .animate({ width: "0%" }, duration, "linear", function() { 
+            $(".f1").removeClass("force-show")
+          });         
+          $(".close-me-quick").on("click", function(){
+            $(".f1").removeClass("force-show")
+          })
+
+          }
+    })
+})
+});
+</script>

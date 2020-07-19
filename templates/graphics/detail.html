@@ -1,0 +1,79 @@
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pius Lucky :: Graphics Designer + Software Engineer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <link rel="icon" href="{% static 'asset/image/favicon.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'asset/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'asset/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'asset/css/responsive.css' %}">
+</head>
+<body>
+<div class="spinner-wrapper">
+<div class="spinner"></div>
+</div>
+ {% if archive_post %}
+ <div class="modal" style="display: flex;">
+   <div class="modal_item">
+       <a href="/graphics/"><div class="close"><i class="fa fa-times-circle times-styl close-btn"></i></div></a>
+       <div class="g_descr">
+         <div class="g_badge">
+           
+            {% for each_badge in archive_post.tag.all %} 
+            <span class="g_badge-bk">{{each_badge}}</span>
+            {% endfor %}
+            
+         </div>
+         <h2>Full description:</h2>
+         <div class="modal-desc">  
+          {{archive_post.description|safe}}  
+         </div>
+        </div>
+       <div class="final_design">
+         <h2 class="prest"><i class="fas fa-play"></i>&nbsp;Final Design</h2>
+         <div class="separator"></div> 
+          <div class="finald-div">
+            {% if archive_fd %}
+            {% for item in archive_fd %}
+              <div class="fd_img_dv">
+              <img src="{{item.final_design.url}}" class="resp_fd">
+              </div> 
+            {% endfor %}  
+            {% endif %}    
+          </div>
+          <div class="separator"></div>  
+       </div>
+        <div class="mocker-div-super">
+        {% if archive_mk %}
+        <div class="mock_ups">
+         <h2 class="prest"><i class="fas fa-award"></i>&nbsp;Presentation</h2>
+          <p class="mock_ups__items">
+            <div class="separator"></div> 
+              <div class="mocker-div-super">
+                  {% for item in archive_mk %}
+                  <div class="fd_img_dv">
+                  <img src="{{item.mocks.url}}" class="resp_fd">  
+                  </div>         
+                  {% endfor %}
+              </div>                   
+             <div class="separator"></div>  
+          </p>
+        </div>
+        {% endif %}      
+        </div>
+       <div class="close-primary-btn">
+          <a href="/graphics/" class="link-return"><span class="see-more-btn"><i class="fas fa-arrow-left"></i> Return</span></a>       
+       </div>
+       <div class="modal_footer">
+         <span class="modal_footer-text"><i class="fas fa-star"></i> See you soon!</span>
+       </div>
+   </div>
+
+ </div>
+{% endif %}  
+<script src="{% static 'asset/js/jquery.min.js' %}"></script> 
+<script src="{% static 'asset/js/graphics.js' %}"></script>
+</body>
+

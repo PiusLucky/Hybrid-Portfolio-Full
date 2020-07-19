@@ -1,0 +1,545 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{title}} :: Software Engineer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+        <link rel="icon" href="{% static 'asset/image/favicon.png' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'asset/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'asset/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'asset/css/responsive.css' %}">
+    </head>
+    {% block alert %}
+    <div class="s1">
+    <div class="info">
+      <div class="info__header">INFO</div>
+      <div class="info__success">
+        <i class="fas fa-check-circle close-me-quick"></i>&nbsp; Successfully sent!
+      </div>
+      <div class="info__progress">
+        <div class="outerdiv">
+          <div id="innerdiv"></div>
+        </div>  
+      </div>
+      </div>
+    </div>
+    <div class="f1">
+      <div class="info fail_info">
+        <div class="info__header">INFO</div>
+        <div class="info__success">
+          <i class="fas fa-times-circle close-me-quick"></i>&nbsp; Failed, try again!
+        </div>
+        <div class="info__progress">
+          <div class="outerdiv">
+            <div id="innerdiv"></div>
+          </div>  
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    {% block modal %}
+    {% endblock %}
+    <body>
+
+      <div class="static_container">
+          <div class="logo">
+              <img src="{% static 'asset/image/logo.svg' %}" class="logo__image">
+          </div>
+          <div class="base">
+              <div class="base__item"></div>
+          </div>
+          <div class="container_showcase">
+          <div class="social_brief">
+          <div class="brief">
+              <h1 class="brief__hi">Hi,</h1>
+              <p class="brief__desc">
+              {% block intro %}
+              My name is <span class="name_color">Pius Lucky</span>. I'm a Nigeria based software engineer (& graphics designer) interested in the craft of 
+              building exceptional web applications for clients.
+              {% endblock %}
+              </p>
+          </div>
+
+          <div class="social">
+              <div class="icon">
+                  <a href="https://github.com/PiusLucky" target="_blank"><i class="fab fa-github git_style"></i></a>
+                  <a href="https://www.linkedin.com/in/lucky-pius-52b2b4179" target="_blank"><i class="fab fa-linkedin linked_style"></i></a>
+                  <a href="mailto:luckypius50@gmail.com" target="_blank"><i class="fas fa-envelope env_style"></i></a>
+              </div>
+              <div class="fiverr">
+                  <a href="https://www.fiverr.com/pius_lucky" target="_blank">
+                    <button class="hire_btn"> Hire me on Fiverr</button>
+                  </a>
+              </div>
+
+          </div>
+          </div>
+          <div class="picture">
+            <img src="{% static 'asset/image/about_me.webp' %}">
+          </div>
+          </div>
+      </div>
+
+      <div class="group_section">
+        <div class="left-side">
+            {% block about %}
+            <div class="about">
+                <h2 class="header">
+                  About me
+                </h2>
+                <p class="content assign_lh">
+                   <p>I design & build responsive web apps from scratch; from the Database & RESTful( sometimes GraphQL) API through to the UI. </p>
+                   <p><span class="time_span"></span>+ years of extensive professional experience and skills in HTML5, CSS3, Javascript, jQuery (including jQuery Ajax), Bootstrap 3 (up to Bootstrap5), Node.js, React.js and Python (Django) has taught me to always pay keen attention to details & following certain clean code conventions. </p>
+                   <p>  I also have working knowledge of design tools such as Illustrator and Photoshop which are evident in my <a href="/graphics/" target="_blank"><span class="styl_gph">graphics porfolio</span></a>.
+                   Other web technologies I have mastered are shown in the stack section. </p>
+
+                </p>
+                <div class="cv_div">
+                  <a href="" target="_blank"><button class="cv_div__btn">Résumé</button></a>
+                </div>
+            </div>
+            {% endblock %}
+            {% block roadmap %}
+            <div class="road_map">
+                <h2 class="header">
+                 Road map
+                </h2>
+                <div class="content">
+                 Most of the conventions I follow upon any new projects are as follows:
+                 <ul>
+                     <li class="roadmap_li assign_lh">Drafting a proper UML for high-powered web applications.</li>
+                     <li class="roadmap_li assign_lh">Following Google's style guide</li>
+                     <li class="roadmap_li assign_lh">Leveraging responsive web frameworks to consistently complete product deliverables ahead of schedule.</li>
+                     <li class="roadmap_li assign_lh">Using jQuery and leveraging popular plugins for common or complex interactive components.</li>
+                     <li class="roadmap_li assign_lh">Engineering the Backend, adhering to Modularization</li>
+                     <li class="roadmap_li assign_lh">Engineering the Backend, adhering to Unit Testing</li>
+                     <li class="roadmap_li assign_lh">Building RESTful APIs (if neccessary)</li>
+                     <li class="roadmap_li assign_lh">Refactorization via Code cleaning</li>
+                 </ul>
+                </div>
+            </div>
+            {% endblock %}
+            <div class="qualification">
+              <h2 class="header">
+                  Qualifications & Achievements
+              </h2>
+              <div class="content">
+                  Notable achievements are as follows:
+                  <ul>
+                      <li class="assign_lh">
+                          B.Sc. Economics;&nbsp;
+                          University of Benin [UNIBEN]
+                          (Mar. 2015 - Dec. 2019)
+                      </li>
+                      <br>
+                      <li>
+                          Founder/CEO: <a class="jap_link" href="https://www.joint-access-programmer.com" target="_blank">joint-access-programmer.com </a>
+                         
+                      </li>
+                      <p class="about-jap assign_lh">
+                      {% block about_jap %}
+                        Joint-access-programmer is a platform that provides developers and developers-alike access to practical projects with the
+                        inclusion of full-fledged source codes. Blog articles are published weekly and they span across UI/UX, backends (including Python, NodeJS, Databases...), algorithms,  and also premium projects that ensure one-on-one contact with propective clients and setting them in the right
+                        path. A better way to enhance your coding skills!
+                      {% endblock %}
+                      </p>
+                  </ul>
+              </div>
+            </div>
+        </div>
+        {% block rightside %}
+        <div class="right-side">
+         <div class="main_project_tag"> Main Projects</div>
+         <div class="main_projects">
+          <!-- first item -->
+          <div class="main_projects__item_1">
+            <div class="main_projects__image first-image-project" style="background-image: url('{% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.image.url}}{% endif %}{% endfor %}{% endif %}');">
+            </div>
+            <div class="icon_body-1">
+              <div class="icon_bg">
+                <a href="{% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.github}}{% endif %}{% endfor %}{% endif %}" class="link_color" target="_blank"><i class="fab fa-github"></i></a></div>
+              <input type="checkbox" name="main_projects__item_1-checkbox" id="main_projects__item_1" />
+              <label for="main_projects__item_1" id="main_projects__item_1">
+                <div class="icon_bg"><i class="fas fa-plus plus-1"></i></div>
+              </label>
+              <div class="icon_bg"><a href="{% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.link}}{% endif %}{% endfor %}{% endif %}" class="link_color" target="_blank"><i class="fa fa-external-link-alt"></i></a></div>
+            </div>
+           
+          </div>
+          <div class="main_projects__item_1__desc">
+            <div class="project_overview">
+              {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+            </div>
+            <div class="contributions">
+               {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.description_body}}{% endif %}{% endfor %}{% endif %}
+            </div>             
+          </div>
+          <!-- second item -->
+          <div class="main_projects__item_2">
+            <div class="main_projects__image" style="background-image: url('{% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.image.url}}{% endif %}{% endfor %}{% endif %}');">
+            </div>
+            <div class="icon_body-2">
+             <div class="icon_bg"><a href="{% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.github}}{% endif %}{% endfor %}{% endif %}" class="link_color" target="_blank"><i class="fab fa-github"></i></a></div>
+             <input type="checkbox" name="main_projects__item_2-checkbox" id="main_projects__item_2" />
+             <label for="main_projects__item_2" id="main_projects__item_2">
+                <div class="icon_bg"><i class="fas fa-plus plus-2"></i></div>
+              </label>
+             <div class="icon_bg"> <a href="{% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.link}}{% endif %}{% endfor %}{% endif %}" class="link_color" target="_blank"><i class="fa fa-external-link-alt"></i></a></div>
+            </div>
+           
+          </div>
+          <div class="main_projects__item_2__desc">
+            <div class="project_overview">
+              {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+            </div>
+            <div class="contributions">
+               {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.description_body}}{% endif %}{% endfor %}{% endif %}
+            </div>             
+          </div>
+          <!-- third item -->
+          <div class="main_projects__item_3">
+            <div class="main_projects__image" style="background-image: url('{% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.image.url}}{% endif %}{% endfor %}{% endif %}');">
+            </div>
+            <div class="icon_body-3">
+              <div class="icon_bg">
+                <a href="{% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.github}}{% endif %}{% endfor %}{% endif %}" class="link_color" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+              <input type="checkbox" name="main_projects__item_3-checkbox" id="main_projects__item_3" />
+              <label for="main_projects__item_3" id="main_projects__item_3">
+                <div class="icon_bg"><i class="fas fa-plus plus-3"></i></div>
+              </label>
+              <div class="icon_bg">
+                 <a href="{% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.link}}{% endif %}{% endfor %}{% endif %}" class="link_color" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            
+          </div>
+          <div class="main_projects__item_3__desc">
+            <div class="project_overview">
+               {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+            </div>
+            <div class="contributions">
+               {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.description_body}}{% endif %}{% endfor %}{% endif %}
+            </div>             
+          </div>
+           <!-- fourth item -->
+          <div class="main_projects__item_4">
+            <div class="main_projects__image" style="background-image: url('{% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.image.url}}{% endif %}{% endfor %}{% endif %}');">
+            </div>
+            <div class="icon_body-3">
+              <div class="icon_bg">
+                <a href="{% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.github}}{% endif %}{% endfor %}{% endif %}" class="link_color" target="_blank"><i class="fab fa-github"></i></a>
+              </div>
+              <input type="checkbox" name="main_projects__item_4-checkbox" id="main_projects__item_4" />
+              <label for="main_projects__item_4" id="main_projects__item_4">
+                <div class="icon_bg"><i class="fas fa-plus plus-4"></i></div>
+              </label>
+              <div class="icon_bg">
+                 <a href="{% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.link}}{% endif %}{% endfor %}{% endif %}" class="link_color" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+                 </div>
+            </div>
+            
+          </div>
+          <div class="main_projects__item_4__desc">
+            <div class="project_overview">
+              {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+            </div>
+            <div class="contributions">
+              {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.description_body}}{% endif %}{% endfor %}{% endif %}
+            </div>             
+          </div>
+
+
+          
+         </div>
+         </div>
+        </div>
+        {% endblock %}
+     <div class="other_section">
+     <!-- my stack --> 
+      <div class="stack_header">My&nbsp;<span class="stack_word">Stack</span></div>
+      <div class="subtext">Technologies in my Stack</div> 
+      {% block stack %}
+      <div class="my_stack">
+        {% if stack %}
+        {% for item in stack %}
+        {% if item.position == '1' %}
+        <a href="{{item.link}}" class="stack_link">
+          <div class="card">
+              <div class="card__logo">
+                <img src="{{item.icon.url}}" class="image_style">
+              </div>
+              <div class="card__title">
+                {{item.tech}}
+              </div>
+              <div class="stylish_underscore"></div>
+              <div class="add_padding"></div>
+              <div class="card__descr">
+                {{item.about_tech}}
+              </div>
+          </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% if stack %}
+        {% for item in stack %}
+        {% if item.position == '2' %}
+        <a href="{{item.link}}" class="stack_link">
+          <div class="card">
+            <div class="card__logo">
+              <img src="{{item.icon.url}}" class="image_style">
+            </div>
+            <div class="card__title">
+              {{item.tech}}
+            </div>
+            <div class="stylish_underscore"></div>
+            <div class="add_padding"></div>
+            <div class="card__descr">
+              {{item.about_tech}}
+            </div>
+          </div>
+        </a>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+
+          {% if stack %}
+          {% for item in stack %}
+          {% if item.position == '3' %}
+          <a href="{{item.link}}" class="stack_link">
+            <div class="card">
+              <div class="card__logo">
+                <img src="{{item.icon.url}}" class="image_style">
+              </div>
+              <div class="card__title">
+                {{item.tech}}
+              </div>
+              <div class="stylish_underscore"></div>
+              <div class="add_padding"></div>
+              <div class="card__descr">
+               {{item.about_tech}}
+              </div>
+            </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+
+          {% if stack %}
+          {% for item in stack %}
+          {% if item.position == 'others' %}
+          <a href="{{item.link}}" class="stack_link stack_toggler">
+            <div class="card">
+              <div class="card__logo">
+                <img src="{{item.icon.url}}" class="image_style">
+              </div>
+              <div class="card__title">
+                {{item.tech}}
+              </div>
+              <div class="stylish_underscore"></div>
+              <div class="add_padding"></div>
+              <div class="card__descr">
+                 {{item.about_tech}}
+              </div>
+            </div>
+          </a> 
+          {% endif %}
+          {% endfor %}
+          {% endif %}  
+
+      </div>
+      <div class="show_more-stack">
+        <button class="show_more-stack-btn">Show More</button>
+      </div>
+      {% endblock %}
+
+      <!-- other projects -->
+      {% block proj_header %} 
+      <div class="stack_header">Other&nbsp;<span class="stack_word">Projects</span></div> 
+      <div class="subtext">Projects completed and currently maintained!</div> 
+      {% endblock %}
+      {% block other_projects %}
+      <div class="other_projects">
+        {% if archive %}
+        {% for item in archive %}
+        {% if item.position == '1' %}
+          <div class="other_projects__card">
+            <div class="project_access">
+              <div class="first-set">
+                <i class="fas fa-folder folder-styl" ></i>
+              </div>              
+              <div class="second-set">
+                <a href="{{item.github}}" target="_blank"><i class="fab fa-github github-styl" title="Github"></i></a>
+                <span class="icon_spacer"></span>
+                <a href="{{item.external_link}}" target="_blank"><i class="fas fa-external-link-alt link-styl" title="External Link"></i></a>
+              </div>
+            </div>
+            <div class="other_projects__card-title">
+              {{item.title}}
+            </div>
+            <div class="other_projects__stylish-underscore"></div>
+            <div class="add_padding"></div>
+            <div class="card__descr">
+              {{item.description}}
+            </div>
+             <div class="technologies"><i class="fas fa-star"></i>&nbsp;{{item.backend_tech}}</div>
+          </div> 
+          {% endif %}
+          {% endfor %}
+          {% endif %}  
+
+          {% if archive %}
+          {% for item in archive %}
+          {% if item.position == '2' %}
+          <div class="other_projects__card">
+            <div class="project_access">
+              <div class="first-set">
+                <i class="fas fa-folder folder-styl" ></i>
+              </div>              
+              <div class="second-set">
+                <a href="{{item.github}}" target="_blank"><i class="fab fa-github github-styl" title="Github"></i></a>
+                <span class="icon_spacer"></span>
+                <a href="{{item.external_link}}" target="_blank"><i class="fas fa-external-link-alt link-styl" title="External Link"></i></a>
+              </div>
+            </div>
+            <div class="other_projects__card-title">
+              {{item.title}}
+            </div>
+            <div class="other_projects__stylish-underscore"></div>
+            <div class="add_padding"></div>
+            <div class="card__descr">
+              {{item.description}}
+            </div>
+            <div class="technologies"><i class="fas fa-star"></i>&nbsp;{{item.backend_tech}}</div>
+          </div> 
+          {% endif %}
+          {% endfor %}
+          {% endif %} 
+
+          {% if archive %}
+          {% for item in archive %}
+          {% if item.position == '3' %}
+          <div class="other_projects__card">
+            <div class="project_access">
+              <div class="first-set">
+                <i class="fas fa-folder folder-styl" ></i>
+              </div>              
+              <div class="second-set">
+                <a href="{{item.github}}" target="_blank"><i class="fab fa-github github-styl" title="Github"></i></a>
+                <span class="icon_spacer"></span>
+                <a href="{{item.external_link}}" target="_blank"><i class="fas fa-external-link-alt link-styl" title="External Link"></i></a>
+              </div>
+            </div>
+            <div class="other_projects__card-title">
+              {{item.title}}
+            </div>
+            <div class="other_projects__stylish-underscore"></div>
+            <div class="add_padding"></div>
+            <div class="card__descr">
+              {{item.description}}
+            </div>
+             <div class="technologies"><i class="fas fa-star"></i>&nbsp;{{item.backend_tech}}</div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endif %} 
+
+          {% if archive %}
+          {% for item in archive %}
+          {% if item.position == 'others' %}
+          <div class="other_projects__card toggler">
+            <div class="project_access">
+              <div class="first-set">
+                <i class="fas fa-folder folder-styl" ></i>
+              </div>              
+              <div class="second-set">
+                <a href="{{item.github}}" target="_blank"><i class="fab fa-github github-styl" title="Github"></i></a>
+                <span class="icon_spacer"></span>
+                <a href="{{item.external_link}}" target="_blank"><i class="fas fa-external-link-alt link-styl" title="External Link"></i></a>
+              </div>
+            </div>
+            <div class="other_projects__card-title">
+              {{item.title}}
+            </div>
+            <div class="other_projects__stylish-underscore"></div>
+            <div class="add_padding"></div>
+            <div class="card__descr">
+              {{item.description}}
+            </div>
+             <div class="technologies"><i class="fas fa-star"></i>&nbsp;{{item.backend_tech}}</div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endif %}           
+      </div>
+        <div class="show_more-div">
+          <button class="show_more-btn">Show More</button>
+        </div>
+
+      {% endblock %}
+
+      <!-- contact me -->
+      <div class="cnt_container">
+      <div class="stack_header cnt-sh">Get in &nbsp;<span class="stack_word">Touch</span></div> 
+      <div class="contact-subtext">Always open for a new collaboration</div>
+      <div class="contact">
+        <form class="main_form contact_form" method="POST" id="contact_form">
+          {% csrf_token %}
+          <tr>
+            <th>
+              <label class="contact_label" for="id_name">Name</label>
+            </th>
+            <span class="pusher"></span>
+            <td><input class="form-control" type="text" name="name" maxlength="120" required id="id_name" />
+            </td>
+          </tr>
+          <br>
+          <tr>
+            <th><label class="contact_label" for="id_email">Email</label></th>
+            <span class="pusher"></span>
+            <td><input class="form-control" type="email" name="email" maxlength="60" required id="id_email" /></td>
+          </tr>
+          <br>
+          <tr class="move_down">
+            <th><label class="contact_label" for="id_subject">Subject</label></th>
+            <span class="pusher"></span>
+            <td><input readonly="" class="form-control" type="text" name="subject" maxlength="220" required id="id_subject" value="Let's Talk Business 🙋" /></td>
+          </tr>
+          <br>
+          <tr class="move_down">
+            <th><label class="contact_label" for="id_message">Message</label></th>
+            <span class="pusher"></span>
+            <td><textarea class="form-control" name="message" cols="40" rows="10" maxlength="1000" required id="id_message"></textarea></td>
+          </tr>
+          <button type="submit" class="contact_sbm_btn">
+            <span class="cnt_flex">Send Message
+              <img class="ajax_loader" src="{% static 'asset/image/loader.gif' %}">
+            </span>
+            </button>
+          </form>
+      </div>
+      </div>
+      </div>
+
+      <!-- footer -->
+      <div class="footer">
+        <div><span class="footer__firsttext">Designed & Built with&nbsp;&nbsp;<i class="fas fa-heart footer__heart"></i>&nbsp;&nbsp;by Lucky Pius</span></div>
+        <div class="footer__connect">
+          <span><a href="https://github.com/PiusLucky" target="_blank"><i class="fab fa-github git_style_footer"></i></a></span>
+          <a href="https://www.linkedin.com/in/lucky-pius-52b2b4179" target="_blank"><i class="fab fa-linkedin linked_style_footer"></i></a>
+          <a href="mailto:luckypius50@gmail.com" target="_blank"><i class="fas fa-envelope env_style_footer"></i></a>
+        </div>
+      </div>
+      <script src="{% static 'asset/js/jquery.min.js' %}"></script>
+      {% include 'attachments/__contact_script.html' %}
+      <script src="{% static 'asset/js/main.js' %}"></script>
+      {% block last_scripter %}
+      <script src="{% static 'asset/js/webTimeUtil.js' %}"></script>
+      {% endblock %}     
+    </body>
+</html>
