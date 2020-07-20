@@ -21,7 +21,7 @@
 
 
 
-## About Me as Web Dev.
+## :green_heart: About Me as Web Dev.
 
 I design & build responsive web apps from scratch; from the Database & RESTful( sometimes GraphQL) API through to the UI.
 
@@ -29,7 +29,7 @@ Three (3)+ years of extensive professional experience and skills in HTML5, CSS3,
 
 I also have working knowledge of design tools such as Illustrator and Photoshop which are evident in my <a href="https://www.hire-pius.com/graphics/" target="_blank">graphics design portfolio</a>. Other web technologies I have mastered are shown in the stack section.
 
-## About Me as G-Designer
+## :green_heart: About Me as G-Designer
 
 <p>I indulge in designs that include logo, illustrations, icons, 3D models etc.</p>
 Some of the professional technologies in my stack include Adobe Photoshop, Adobe Illustrator, Blender and Figma </p>
