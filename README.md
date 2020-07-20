@@ -21,7 +21,7 @@
 
 
 
-## :green_heart: About Me as Web Dev.
+## :boom: About Me as Web Dev.
 
 I design & build responsive web apps from scratch; from the Database & RESTful( sometimes GraphQL) API through to the UI.
 
@@ -35,7 +35,7 @@ I also have working knowledge of design tools such as Illustrator and Photoshop 
 Some of the professional technologies in my stack include Adobe Photoshop, Adobe Illustrator, Blender and Figma </p>
 <p>Am also a practically-certified web developer and have worked on numerous project and they are evident in my <a href="/" target="_blank"><span class="styl_gph">web developer's portfolio</span></a>.
 
-## Road map: Web Dev.
+## :boom: Road map: Web Dev.
 
 Most of the conventions I follow upon any new projects are as follows:
 
@@ -52,7 +52,7 @@ Most of the conventions I follow upon any new projects are as follows:
 </ul>
 
 
-## Road map: Design
+## :green_heart: Road map: Design
 Most of the conventions I follow upon any new projects are as follows:
 <ul>
 <li class="roadmap_li assign_lh">Providing a Creative Brief for Clients Using Jotform</li>
@@ -65,7 +65,7 @@ Most of the conventions I follow upon any new projects are as follows:
 </ul>
 
 
-## Color Scheme
+## :boom: Color Scheme
 The color scheme used in designing the project from scratch involves three main colors:
 
 ```json
@@ -76,14 +76,14 @@ The color scheme used in designing the project from scratch involves three main 
 ```
 
 
-## Author
+## :boom: Author
 
 👤 **Pius Lucky**
 
 - Github: [@PiusLucky](https://github.com/PiusLucky)
 - Official: [https://www.joint-access-programmer.com](https://www.joint-access-programmer.com)
 
-## Show your support
+## :green_heart: Show your support
 
 Please ⭐️ this repository if this project helped you!
 
@@ -91,7 +91,7 @@ Please ⭐️ this repository if this project helped you!
   <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
 
-## 📝 License
+## :boom: 📝 License
 
 Copyright © 2020 [Pius Lucky](https://github.com/PiusLucky).<br />
 
