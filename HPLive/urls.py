@@ -11,9 +11,9 @@ urlpatterns = [
 ]
 
 
-if settings.DEBUG or not settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
 
 admin.site.site_header = 'HybridPortfolio Administrator@Pius_Lucky'
 admin.site.site_title = 'HybridPortfolio Administrator@Pius_Lucky'
