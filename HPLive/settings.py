@@ -109,17 +109,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-
-STATIC_URL = '/main/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'main/static/')
-
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
-
-
-
 EMAIL_HOST = os.environ['EMAIL_HOST']
 EMAIL_PORT = int(os.environ['EMAIL_PORT'])
 EMAIL_USE_TLS = False
