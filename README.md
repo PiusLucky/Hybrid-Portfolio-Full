@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="JAP Logo" src="https://github.com/PiusLucky/Hybrid-Portfolio-Full/blob/master/static/asset/image/logo.svg?raw=true" width="100" />
+  <img alt="JAP Logo" src="https://github.com/PiusLucky/Hybrid-Portfolio-Full/blob/master/static/asset/image/Hybrid%20Portfolio%20logo%20-%20Colored.svg?raw=true" width="100" />
 </p>
 <h1 align="center">
   My Porfolio (Hybrid- Graphics, Web)
@@ -19,40 +19,60 @@
     </a>
 </p>
 
-![demo](https://github.com/PiusLucky/joint-access-programmer-Pro-/blob/master/static/asset/img/dashboard.png?raw=true)
-
-## About JointAccessProgrammer.com
-
-Creating web interfaces, APIs, Backends, Algorithms, Scripts are insanely fun and satisfying, but can be difficult as well. Our main goal is to break down these heinous tasks simply plain.
-
-## Available Categories
-
-### User Interface / User Experience
-UI/UX brings boring codes to live, it comes first, a project with proper visualization is way respected compared to another with saggy visuals. We intend making you a UI Expert.
-
-### Backend
-The userface is nothing without a clean and functional backend. The complexities and logic behind the scenes as well as building <code>APIS</code> which are wired with server-side programming languages like Python, NodeJS, ReactJS..
-
-### Algorithms, ML
-There has to be a way to get the job done, not just finding the way but also putting effectiveness and efficiency forward. Machine learning algorithms are best for stand-alone actions taken without explicitly instructing the computer to do so.
-
-### Free Projects (+ source code )
-We offer majority of our projects for free with all source codes available on github for download. Specifically meant for non-patreons.
 
 
-### Premium
-Premium projects consist of all project materials, source codes, prototypes. Cheapest hosting ideas and domain name purchases for our patreons who also get access to sensitive materials as well as 24/7 support from our dedicated team of software engineers.
+## About Me as Web Dev.
+
+I design & build responsive web apps from scratch; from the Database & RESTful( sometimes GraphQL) API through to the UI.
+
+Three (3)+ years of extensive professional experience and skills in HTML5, CSS3, Javascript, jQuery (including jQuery Ajax), Bootstrap 3 (up to Bootstrap5), Node.js, React.js and Python (Django) has taught me to always pay keen attention to details & to follow certain clean code conventions.
+
+I also have working knowledge of design tools such as Illustrator and Photoshop which are evident in my <a href="https://www.hire-pius.com/graphics/" target="_blank">graphics design portfolio</a>. Other web technologies I have mastered are shown in the stack section.
+
+## About Me as G-Designer
+
+<p>I indulge in designs that include logo, illustrations, icons, 3D models etc.</p>
+Some of the professional technologies in my stack include Adobe Photoshop, Adobe Illustrator, Blender and Figma </p>
+<p>Am also a practically-certified web developer and have worked on numerous project and they are evident in my <a href="/" target="_blank"><span class="styl_gph">web developer's portfolio</span></a>.
+
+## Road map: Web Dev.
+
+Most of the conventions I follow upon any new projects are as follows:
+
+<ul>
+<li class="roadmap_li assign_lh">Drafting a proper UML for high-powered web applications.</li>
+<li class="roadmap_li assign_lh">Following Google's style guide</li>
+<li class="roadmap_li assign_lh">Leveraging responsive web frameworks to consistently complete product deliverables ahead of schedule.</li>
+<li class="roadmap_li assign_lh">Using jQuery and leveraging popular plugins for common or complex interactive components.</li>
+<li class="roadmap_li assign_lh">Engineering the Backend, adhering to Modularization</li>
+<li class="roadmap_li assign_lh">Engineering the Backend, adhering to Unit Testing</li>
+<li class="roadmap_li assign_lh">Building RESTful APIs (if neccessary)</li>
+<li class="roadmap_li assign_lh">Refactorization via Code cleaning</li>
+  
+</ul>
+
+
+## Road map: Design
+Most of the conventions I follow upon any new projects are as follows:
+<ul>
+<li class="roadmap_li assign_lh">Providing a Creative Brief for Clients Using Jotform</li>
+<li class="roadmap_li assign_lh">Indulging in extensive research as regards competitors design [providing better quality!]</li>
+<li class="roadmap_li assign_lh">Moodboarding, Brainstorming and Sketching</li>
+<li class="roadmap_li assign_lh">Concepts and Concepts Iteration</li>
+<li class="roadmap_li assign_lh">Following Graphic Design Production Process and Refining of Design </li>
+<li class="roadmap_li assign_lh">Client Approval Process</li>
+<li class="roadmap_li assign_lh">Final design delivery</li>
+</ul>
 
 
 ## Color Scheme
-
 The color scheme used in designing the project from scratch involves three main colors:
 
 ```json
-  "Russian Violet": "#2f195f"
-  "Xiketic": "#0f1020"
-  "Pure white": #fff
-  "Wheat": #efd6ac
+  main background => #0a192f;
+  logo base => #23eae6;
+  alternate color (group_section) => #0a2c2f
+  icon hover color #00fff0
 ```
 
 
@@ -74,5 +94,4 @@ Please ⭐️ this repository if this project helped you!
 ## 📝 License
 
 Copyright © 2020 [Pius Lucky](https://github.com/PiusLucky).<br />
-This project is [MIT](https://github.com/PiusLucky/joint-access-programmer-Pro-/blob/master/LICENSE) licensed.
 
