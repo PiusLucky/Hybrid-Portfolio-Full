@@ -1,14 +1,26 @@
 import os
+import dj_database_url
+import django_heroku
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = '^@=a)8c-q_h(lvyvxd7-ra8b5a4$kj#*=2057&uilex9^g0!n0'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+                 os.environ['ALLOWED_HOST_1'],
+                 os.environ['ALLOWED_HOST_2'],
+                 os.environ['ALLOWED_HOST_3']
+                ]
 
+ADMINS = (
+    ("Pius Lucky", os.environ['ADMIN_EMAIL']),
+)
+
+SITE_ID = int(os.environ['SITE_ID'])
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -18,7 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'graphics'
+    'graphics',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -54,8 +67,12 @@ WSGI_APPLICATION = 'HPLive.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': os.environ['DATABASE_ENGINE'],
+        'NAME': os.environ['DATABASE_NAME'],
+        'USER': os.environ['DATABASE_USER'],
+        'PASSWORD': os.environ['DATABASE_USER_PASSWORD'],
+        'HOST': os.environ['DATABASE_HOST'],
+        'PORT': os.environ['DATABASE_PORT']
     }
 }
 
@@ -99,18 +116,43 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 465 
+
+EMAIL_HOST = os.environ['EMAIL_HOST']
+EMAIL_PORT = int(os.environ['EMAIL_PORT'])
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = "luckypius50@gmail.com"
-EMAIL_HOST_PASSWORD = "etbtqunzxflmspei"
-DEFAULT_FROM_EMAIL = "Lucky Pius<reply@hire-pius.com>"
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+DEFAULT_FROM_EMAIL = os.environ['DEFAULT_FROM_EMAIL']
 
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = "luckypius50@gmail.com"
-# EMAIL_HOST_PASSWORD = "Lucky&Pius&50"
+django_heroku.settings(locals())
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ['CLOUDINARY_CLOUD_NAME'],
+    'API_KEY': os.environ['CLOUDINARY_API_KEY'],
+    'API_SECRET': os.environ['CLOUDINARY_API_SECRET'],
+}
+
+MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+STATIC_ROOT = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'staticfiles'),
+)
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+
+# Securing site
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+X_FRAME_OPTIONS = 'DENY'

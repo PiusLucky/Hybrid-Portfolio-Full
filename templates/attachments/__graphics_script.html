@@ -1,0 +1,389 @@
+<script type="text/javascript">
+function mock_checker(){
+  const all_mocks = document.querySelectorAll(".mock_ups img")
+  const total_mocks = all_mocks.length
+  if(total_mocks == ""){
+      $( ".mock_ups" ).addClass("hide_me")
+  }else {
+      $( ".mock_ups" ).removeClass("hide_me")
+  }
+}
+
+$(".link_color_1").on("click", function(){
+  $( ".modal" ).addClass("force-showw")
+  $( "body" ).addClass("strip_vl")
+  $( ".g_badge" ).html(`
+      {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}
+      {% for each_badge in item.tag.all %} 
+      <span class="g_badge-bk">{{each_badge}}</span>{% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+  $( ".modal-desc" ).html(`
+    {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}
+    {{item.description_body|safe}}
+    {% endif %}
+    {% endfor %}
+    {% endif %}      
+  `)
+  
+  $( ".finald-div" ).html(`
+    {% if finald %}
+    {% for item in finald %}
+    {% if item.portfolio.position == "1" %}   
+    <div class="fd_img_dv">
+    <img src="{{item.final_design.url}}" class="resp_fd">
+    </div>         
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  `)
+
+  $( ".mocker-div-super" ).html(`
+    <div class="mock_ups">
+      <h2 class="prest"><i class="fas fa-award"></i>&nbsp;Presentation</h2>
+      <p class="mock_ups__items">
+        <div class="separator"></div> 
+          <div class="mocker-div-super">
+              {% for item in mocks %}
+              {% if item.portfolio.position == "1" %}   
+              <div class="fd_img_dv">
+              <img src="{{item.mocks.url}}" class="resp_fd">
+               
+              </div>         
+              {% endif %}
+              {% endfor %}
+          </div>                   
+         <div class="separator"></div>  
+      </p>
+    </div>
+   `)
+  $( "body" ).addClass("strip_vl")
+  mock_checker()
+})
+
+$(".link_color_2").on("click", function(){
+  $( ".modal" ).addClass("force-showw")
+  $( "body" ).addClass("strip_vl")
+  $( ".g_badge" ).html(`
+      {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}
+      {% for each_badge in item.tag.all %} 
+      <span class="g_badge-bk">{{each_badge}}</span>{% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+  $( ".modal-desc" ).html(`
+    {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}
+    {{item.description_body|safe}}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  `)
+  $( ".finald-div" ).html(`
+    {% if finald %}
+    {% for item in finald %}
+    {% if item.portfolio.position == "2" %}   
+    <div class="fd_img_dv">
+    <img src="{{item.final_design.url}}" class="resp_fd">
+    </div>         
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  `)
+  $( ".mocker-div-super" ).html(`
+    <div class="mock_ups">
+      <h2 class="prest"><i class="fas fa-award"></i>&nbsp;Presentation</h2>
+      <p class="mock_ups__items">
+        <div class="separator"></div> 
+          <div class="mocker-div-super">
+              {% for item in mocks %}
+              {% if item.portfolio.position == "2" %}   
+              <div class="fd_img_dv">
+              <img src="{{item.mocks.url}}" class="resp_fd">
+              </div>         
+              {% endif %}
+              {% endfor %}
+          </div>                   
+         <div class="separator"></div>  
+      </p>
+    </div>
+   `)
+  $( "body" ).addClass("strip_vl")
+  mock_checker()
+})
+
+$(".link_color_3").on("click", function(){
+  $( ".modal" ).addClass("force-showw")
+  $( "body" ).addClass("strip_vl")
+  $( ".g_badge" ).html(`
+      {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}
+      {% for each_badge in item.tag.all %} 
+      <span class="g_badge-bk">{{each_badge}}</span>{% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+  $( ".modal-desc" ).html(`
+    {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}
+    {{item.description_body|safe}}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  `)
+  $( ".finald-div" ).html(`
+    {% if finald %}
+    {% for item in finald %}
+    {% if item.portfolio.position == "3" %}   
+    <div class="fd_img_dv">
+    <img src="{{item.final_design.url}}" class="resp_fd">
+    </div>         
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  `)
+   $( ".mocker-div-super" ).html(`
+    <div class="mock_ups">
+      <h2 class="prest"><i class="fas fa-award"></i>&nbsp;Presentation</h2>
+      <p class="mock_ups__items">
+        <div class="separator"></div> 
+          <div class="mocker-div-super">
+              {% for item in mocks %}
+              {% if item.portfolio.position == "3" %}   
+              <div class="fd_img_dv">
+              <img src="{{item.mocks.url}}" class="resp_fd">
+              </div>         
+              {% endif %}
+              {% endfor %}
+          </div>                   
+         <div class="separator"></div>  
+      </p>
+    </div>
+   `)
+  $( "body" ).addClass("strip_vl")
+  mock_checker()
+})
+
+$(".link_color_4").on("click", function(){
+  $( ".modal" ).addClass("force-showw")
+  $( "body" ).addClass("strip_vl")
+  $( ".g_badge" ).html(`
+      {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}
+      {% for each_badge in item.tag.all %} 
+      <span class="g_badge-bk">{{each_badge}}</span>{% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+  $( ".modal-desc" ).html(`
+    {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}
+    {{item.description_body|safe}}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  `)
+  $( ".finald-div" ).html(`
+    {% if finald %}
+    {% for item in finald %}
+    {% if item.portfolio.position == "4" %}   
+    <div class="fd_img_dv">
+    <img src="{{item.final_design.url}}" class="resp_fd">
+    </div>         
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  `)
+   $( ".mocker-div-super" ).html(`
+    <div class="mock_ups">
+      <h2 class="prest"><i class="fas fa-award"></i>&nbsp;Presentation</h2>
+      <p class="mock_ups__items">
+        <div class="separator"></div> 
+          <div class="mocker-div-super">
+              {% for item in mocks %}
+              {% if item.portfolio.position == "4" %}   
+              <div class="fd_img_dv">
+              <img src="{{item.mocks.url}}" class="resp_fd">
+              </div>         
+              {% endif %}
+              {% endfor %}
+          </div>                   
+         <div class="separator"></div>  
+      </p>
+    </div>
+   `)  
+
+  $( "body" ).addClass("strip_vl")
+  mock_checker()
+
+})
+
+$(".close, .see-more-btn").on("click", function(){
+  $( ".modal" ).removeClass("force-showw")
+  $( "body" ).removeClass("strip_vl")
+})
+
+// archive section
+$(".link_arch_1").on("click", function(){
+  $( ".modal" ).addClass("force-showw")
+  $( "body" ).addClass("strip_vl")
+  $( ".g_badge" ).html(`
+      {% if archive %}{% for item in archive %}{% if item.position == '1' %}
+      {% for each_badge in item.tag.all %} 
+      <span class="g_badge-bk">{{each_badge}}</span>{% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+  $( ".modal-desc" ).html(`
+      {% if archive %}{% for item in archive %}{% if item.position == '1' %}
+      {{item.description|safe}}
+      {% endif %}
+      {% endfor %}
+      {% endif %}      
+  `)
+  
+  $( ".finald-div" ).html(`
+      {% if a_finald %}
+      {% for item in a_finald %}
+      {% if item.portfolio.position == "1" %}   
+      <div class="fd_img_dv">
+      <img src="{{item.final_design.url}}" class="resp_fd">
+      </div>         
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+
+  $( ".mocker-div-super" ).html(`
+    <div class="mock_ups">
+      <h2 class="prest"><i class="fas fa-award"></i>&nbsp;Presentation</h2>
+      <p class="mock_ups__items">
+        <div class="separator"></div> 
+          <div class="mocker-div-super">
+              {% for item in a_mocks %}
+              {% if item.portfolio.position == "1" %}   
+              <div class="fd_img_dv">
+              <img src="{{item.mocks.url}}" class="resp_fd">
+               
+              </div>         
+              {% endif %}
+              {% endfor %}
+          </div>                   
+         <div class="separator"></div>  
+      </p>
+    </div>
+   `)
+  $( "body" ).addClass("strip_vl")
+  mock_checker()
+})
+
+$(".link_arch_2").on("click", function(){
+  $( ".modal" ).addClass("force-showw")
+  $( "body" ).addClass("strip_vl")
+  $( ".g_badge" ).html(`
+      {% if archive %}{% for item in archive %}{% if item.position == '2' %}
+      {% for each_badge in item.tag.all %} 
+      <span class="g_badge-bk">{{each_badge}}</span>{% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+  $( ".modal-desc" ).html(`
+      {% if archive %}{% for item in archive %}{% if item.position == '2' %}
+      {{item.description|safe}}
+      {% endif %}
+      {% endfor %}
+      {% endif %}      
+  `)
+  
+  $( ".finald-div" ).html(`
+      {% if a_finald %}
+      {% for item in a_finald %}
+      {% if item.portfolio.position == "2" %}   
+      <div class="fd_img_dv">
+      <img src="{{item.final_design.url}}" class="resp_fd">
+      </div>         
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+
+  $( ".mocker-div-super" ).html(`
+    <div class="mock_ups">
+      <h2 class="prest"><i class="fas fa-award"></i>&nbsp;Presentation</h2>
+      <p class="mock_ups__items">
+        <div class="separator"></div> 
+          <div class="mocker-div-super">
+              {% for item in a_mocks %}
+              {% if item.portfolio.position == "2" %}   
+              <div class="fd_img_dv">
+              <img src="{{item.mocks.url}}" class="resp_fd">
+               
+              </div>         
+              {% endif %}
+              {% endfor %}
+          </div>                   
+         <div class="separator"></div>  
+      </p>
+    </div>
+   `)
+  $( "body" ).addClass("strip_vl")
+  mock_checker()
+})
+
+$(".link_arch_3").on("click", function(){
+  $( ".modal" ).addClass("force-showw")
+  $( "body" ).addClass("strip_vl")
+  $( ".g_badge" ).html(`
+      {% if archive %}{% for item in archive %}{% if item.position == '3' %}
+      {% for each_badge in item.tag.all %} 
+      <span class="g_badge-bk">{{each_badge}}</span>{% endfor %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+  $( ".modal-desc" ).html(`
+      {% if archive %}{% for item in archive %}{% if item.position == '3' %}
+      {{item.description|safe}}
+      {% endif %}
+      {% endfor %}
+      {% endif %}      
+  `)
+  
+  $( ".finald-div" ).html(`
+      {% if a_finald %}
+      {% for item in a_finald %}
+      {% if item.portfolio.position == "3" %}   
+      <div class="fd_img_dv">
+      <img src="{{item.final_design.url}}" class="resp_fd">
+      </div>         
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+  `)
+
+  $( ".mocker-div-super" ).html(`
+    <div class="mock_ups">
+      <h2 class="prest"><i class="fas fa-award"></i>&nbsp;Presentation</h2>
+      <p class="mock_ups__items">
+        <div class="separator"></div> 
+          <div class="mocker-div-super">
+              {% for item in a_mocks %}
+              {% if item.portfolio.position == "3" %}   
+              <div class="fd_img_dv">
+              <img src="{{item.mocks.url}}" class="resp_fd">
+               
+              </div>         
+              {% endif %}
+              {% endfor %}
+          </div>                   
+         <div class="separator"></div>  
+      </p>
+    </div>
+   `)
+  $( "body" ).addClass("strip_vl")
+  mock_checker()
+})
+
+</script>
