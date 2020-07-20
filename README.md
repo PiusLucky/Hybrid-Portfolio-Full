@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="JAP Logo" src="https://raw.githubusercontent.com/PiusLucky/Hybrid-Portfolio-Full/master/static/asset/image/logo.svg?raw=true" width="100" />
+  <img alt="JAP Logo" src="https://github.com/PiusLucky/Hybrid-Portfolio-Full/blob/master/static/asset/image/logo.svg?raw=true" width="100" />
 </p>
 <h1 align="center">
   My Porfolio (Hybrid- Graphics, Web)
