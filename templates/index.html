@@ -171,10 +171,10 @@
           </div>
           <div class="main_projects__item_1__desc">
             <div class="project_overview">
-              {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+              {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.description_header|safe}}{% endif %}{% endfor %}{% endif %}
             </div>
             <div class="contributions">
-               {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.description_body}}{% endif %}{% endfor %}{% endif %}
+               {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.description_body|safe}}{% endif %}{% endfor %}{% endif %}
             </div>             
           </div>
           <!-- second item -->
@@ -193,10 +193,10 @@
           </div>
           <div class="main_projects__item_2__desc">
             <div class="project_overview">
-              {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+              {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.description_header|safe}}{% endif %}{% endfor %}{% endif %}
             </div>
             <div class="contributions">
-               {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.description_body}}{% endif %}{% endfor %}{% endif %}
+               {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.description_body|safe}}{% endif %}{% endfor %}{% endif %}
             </div>             
           </div>
           <!-- third item -->
@@ -219,10 +219,10 @@
           </div>
           <div class="main_projects__item_3__desc">
             <div class="project_overview">
-               {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+               {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.description_header|safe}}{% endif %}{% endfor %}{% endif %}
             </div>
             <div class="contributions">
-               {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.description_body}}{% endif %}{% endfor %}{% endif %}
+               {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.description_body|safe}}{% endif %}{% endfor %}{% endif %}
             </div>             
           </div>
            <!-- fourth item -->
@@ -245,10 +245,10 @@
           </div>
           <div class="main_projects__item_4__desc">
             <div class="project_overview">
-              {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+              {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.description_header|safe}}{% endif %}{% endfor %}{% endif %}
             </div>
             <div class="contributions">
-              {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.description_body}}{% endif %}{% endfor %}{% endif %}
+              {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.description_body|safe}}{% endif %}{% endfor %}{% endif %}
             </div>             
           </div>
 

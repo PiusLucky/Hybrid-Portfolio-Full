@@ -102,7 +102,7 @@ design tools like Adobe Photoshop, Illustrator, Figma... for prototyping and cre
   </div>
   <div class="main_projects__item_1__desc">
     <div class="project_overview">
-      {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+      {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.description_header|safe}}{% endif %}{% endfor %}{% endif %}
     </div>
     <div class="contributions">
        {% if portfolio %}{% for item in portfolio %}{% if item.position == '1' %}{{item.description_body|truncatechars_html:300|safe}}{% endif %}{% endfor %}{% endif %}
@@ -123,7 +123,7 @@ design tools like Adobe Photoshop, Illustrator, Figma... for prototyping and cre
   </div>
   <div class="main_projects__item_2__desc">
     <div class="project_overview">
-      {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+      {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.description_header|safe}}{% endif %}{% endfor %}{% endif %}
     </div>
     <div class="contributions">
        {% if portfolio %}{% for item in portfolio %}{% if item.position == '2' %}{{item.description_body|truncatechars_html:300|safe}}{% endif %}{% endfor %}{% endif %}
@@ -146,7 +146,7 @@ design tools like Adobe Photoshop, Illustrator, Figma... for prototyping and cre
   </div>
   <div class="main_projects__item_3__desc">
     <div class="project_overview">
-       {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+       {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.description_header|safe}}{% endif %}{% endfor %}{% endif %}
     </div>
     <div class="contributions">
        {% if portfolio %}{% for item in portfolio %}{% if item.position == '3' %}{{item.description_body|truncatechars_html:300|safe}}{% endif %}{% endfor %}{% endif %}
@@ -169,7 +169,7 @@ design tools like Adobe Photoshop, Illustrator, Figma... for prototyping and cre
   </div>
   <div class="main_projects__item_4__desc">
     <div class="project_overview">
-      {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.description_header}}{% endif %}{% endfor %}{% endif %}
+      {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.description_header|safe}}{% endif %}{% endfor %}{% endif %}
     </div>
     <div class="contributions">
       {% if portfolio %}{% for item in portfolio %}{% if item.position == '4' %}{{item.description_body|truncatechars_html:300|safe}}{% endif %}{% endfor %}{% endif %}
