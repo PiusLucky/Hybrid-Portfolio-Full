@@ -267,7 +267,7 @@
         {% if stack %}
         {% for item in stack %}
         {% if item.position == '1' %}
-        <a href="{{item.link}}" class="stack_link">
+        <a href="{{item.link}}" target="_blank" class="stack_link">
           <div class="card">
               <div class="card__logo">
                 <img src="{{item.icon.url}}" class="image_style">
@@ -289,7 +289,7 @@
         {% if stack %}
         {% for item in stack %}
         {% if item.position == '2' %}
-        <a href="{{item.link}}" class="stack_link">
+        <a href="{{item.link}}" target="_blank" class="stack_link">
           <div class="card">
             <div class="card__logo">
               <img src="{{item.icon.url}}" class="image_style">
@@ -311,7 +311,7 @@
           {% if stack %}
           {% for item in stack %}
           {% if item.position == '3' %}
-          <a href="{{item.link}}" class="stack_link">
+          <a href="{{item.link}}" target="_blank" class="stack_link">
             <div class="card">
               <div class="card__logo">
                 <img src="{{item.icon.url}}" class="image_style">
@@ -333,7 +333,7 @@
           {% if stack %}
           {% for item in stack %}
           {% if item.position == 'others' %}
-          <a href="{{item.link}}" class="stack_link stack_toggler">
+          <a href="{{item.link}}" target="_blank" class="stack_link stack_toggler">
             <div class="card">
               <div class="card__logo">
                 <img src="{{item.icon.url}}" class="image_style">
