@@ -68,7 +68,7 @@ Most of the conventions I follow upon any new projects are as follows:
 ## :boom: Color Scheme
 The color scheme used in designing the project from scratch involves three main colors:
 
-```json
+```html
   main background => #0a192f;
   logo base => #23eae6;
   alternate color (group_section) => #0a2c2f
