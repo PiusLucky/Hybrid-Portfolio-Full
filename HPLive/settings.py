@@ -11,9 +11,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = False
 
 ALLOWED_HOSTS = [
-                 os.environ['ALLOWED_HOST_1'],
-                 os.environ['ALLOWED_HOST_2'],
-                 os.environ['ALLOWED_HOST_3']
+                 os.environ['ALLOWED_HOST_1']
                 ]
 
 ADMINS = (
